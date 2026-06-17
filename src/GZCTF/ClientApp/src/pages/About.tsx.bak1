@@ -1,0 +1,95 @@
+import {
+  Anchor,
+  Center,
+  Group,
+  Stack,
+  Text,
+  Title,
+  useMantineTheme,
+  Flex,
+} from '@mantine/core'
+import { mdiGithub, mdiLink } from '@mdi/js'
+import { Icon } from '@mdi/react'
+import { FC } from 'react'
+import { WithNavBar } from '@Components/WithNavbar'
+import { MainIcon } from '@Components/icon/MainIcon'
+import { useIsMobile } from '@Utils/ThemeOverride'
+import { usePageTitle } from '@Hooks/usePageTitle'
+import classes from '@Styles/About.module.css'
+
+const About: FC = () => {
+  const theme = useMantineTheme()
+  const isMobile = useIsMobile()
+
+  usePageTitle('About')
+
+  return (
+    <WithNavBar minWidth={0}>
+      <Stack justify="center" align="center" gap="xl" className={classes.container}>
+        
+        {/* HEADER */}
+        <Center>
+          <Stack align="center" gap={0}>
+            <MainIcon size="5rem" className={classes.mainIcon} />
+
+            <Title order={1} size="3.5rem" fw={800} ta="center">
+              OWASP CTF
+            </Title>
+
+            <Text size="xl" fw={500} ta="center" c="dimmed" ff="monospace" mt="xs">
+              {'> Hack. Learn. Dominate.'}
+            </Text>
+          </Stack>
+        </Center>
+
+        {/* RESOURCES */}
+        <Flex
+          gap={isMobile ? 'md' : 'xl'}
+          direction="column"
+          align="center"
+        >
+          <Stack align="center" gap="md">
+            <Group gap="xs" justify="center">
+              <Icon path={mdiLink} size={1} />
+              <Title order={3}>Resources</Title>
+            </Group>
+
+            <Stack gap="xs" align="center">
+              <Group gap="sm">
+                <Icon path={mdiLink} size={0.8} />
+                <Anchor
+                  href="https://binarymisfits.in.net"
+                  target="_blank"
+                  c={theme.primaryColor}
+                >
+                  Official Website
+                </Anchor>
+              </Group>
+
+              <Group gap="sm">
+                <Icon path={mdiGithub} size={0.8} />
+                <Anchor
+                  href="https://github.com/H4ACK-BETA"
+                  target="_blank"
+                  c={theme.primaryColor}
+                >
+                  GitHub Repository
+                </Anchor>
+              </Group>
+            </Stack>
+          </Stack>
+        </Flex>
+
+        {/* FOOTER */}
+        <Center>
+          <Text size="sm" c="dimmed" ta="center">
+            © 2026 OWASP Student Chapter - Sathyabama Institute Of Science And Technology
+          </Text>
+        </Center>
+
+      </Stack>
+    </WithNavBar>
+  )
+}
+
+export default About

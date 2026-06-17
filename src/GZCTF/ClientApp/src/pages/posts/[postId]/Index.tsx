@@ -69,7 +69,7 @@ const Post: FC = () => {
           <Avatar alt="avatar" src={post?.authorAvatar} color={theme.primaryColor} radius="xl" size="lg">
             {post?.authorName?.slice(0, 1) ?? 'A'}
           </Avatar>
-          <Text fw="bold">{post?.authorName ?? 'Anonym'}</Text>
+          <Text fw="bold">{post?.authorName ?? 'Admin'}</Text>
           <Stack gap={2}>
             <Divider color={colorScheme === 'dark' ? 'white' : 'gray'} />
             <Text fw={500}>{dayjs(post?.time).locale(locale).format('lll')}</Text>
@@ -93,7 +93,7 @@ const Post: FC = () => {
           </Avatar>
           <Text fw="bold">
             {t('post.content.metadata', {
-              author: post?.authorName ?? 'Anonym',
+              author: post?.authorName ?? 'Admin',
               date: dayjs(post?.time).locale(locale).format('LLL'),
             })}
           </Text>

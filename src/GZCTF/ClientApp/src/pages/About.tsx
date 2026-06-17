@@ -49,7 +49,7 @@ const About: FC = () => {
           <Stack align="center" gap={0}>
             <MainIcon size="5rem" className={classes.mainIcon} />
             <Title order={1} size="3.5rem" fw={800} ta="center" className={classes.mainTitle}>
-              GZ<span className={logoClasses.brand}>::</span>CTF
+              OWASP<span className={logoClasses.brand}>  </span> CTF
             </Title>
             <Text size="xl" fw={500} ta="center" c="dimmed" ff="monospace" mt="xs" className={classes.slogan}>
               &gt;&nbsp;{t('common.content.about.slogan')}

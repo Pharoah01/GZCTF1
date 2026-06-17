@@ -14,12 +14,12 @@ export const Copyright: FC<CopyrightProps> = ({ isMobile }) => {
 
   return (
     <Text size="sm" ta="center" fw={400} c="dimmed">
-      Copyright&nbsp;©&nbsp;2022-{currentYear}&nbsp;
+      © {currentYear} OWASP CTF
       {isMobile && <br />}
-      <Anchor href="https://github.com/GZTimeWalker" c="dimmed" size="sm" fw={500}>
-        @GZTimeWalker
+      <Anchor href="https://owasp.org/www-chapter-sathyabama-institute-of-science-and-technology/" c="dimmed" size="sm" fw={500}>
+         @OWASP Student Chapter | Sathyabama
       </Anchor>
-      ,&nbsp;All&nbsp;Rights&nbsp;Reserved.
+      { /* ,&nbsp;All&nbsp;Rights&nbsp;Reserved. */ }
     </Text>
   )
 }
