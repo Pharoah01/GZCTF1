@@ -9,8 +9,8 @@ services:
       - redis
     environment:
       ASPNETCORE_URLS: http://0.0.0.0:8080
-      ConnectionStrings__Database: Host=db;Port=5432;Database=gzctf;Username=postgres;Password=admin@owasp
-      RedisCache: redis:6379,password=admin@owasp
+      ConnectionStrings__Database: Host=db;Port=5432;Database=gzctf;Username=postgres;Password=Admin@owasp-sist
+      RedisCache: redis:6379,password=Admin@owasp-sist
     volumes:
       - gzctf-files:/app/files
       - /var/run/docker.sock:/var/run/docker.sock
@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_DB: gzctf
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin@owasp
+      POSTGRES_PASSWORD: Admin@owasp-sist
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: unless-stopped
@@ -30,7 +30,7 @@ services:
   redis:
     image: redis:7
     container_name: gzctf-redis
-    command: ["redis-server", "--requirepass", "admin@owasp"]
+    command: ["redis-server", "--requirepass", "Admin@owasp-sist"]
     restart: unless-stopped
 
 volumes:
