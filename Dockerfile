@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-RUN apt-get update && apt-get install -y curl \
+RUN apt-get update && apt-get install -y curl libkrb5-3 libgssapi-krb5-2 \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
 RUN npm install -g pnpm
